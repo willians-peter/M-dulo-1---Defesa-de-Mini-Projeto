@@ -6,7 +6,7 @@ class Tarefa {
   }
 
   listarTarefas() {
-  return `ID: ${this.id} - ${this.titulo}: Tarefa registrada: ${this.tarefa}`;
+  return `${this.titulo}: Tarefa registrada: ${this.tarefa}`;
   }
 }
 

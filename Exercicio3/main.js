@@ -22,8 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const card = document.createElement("li");
   const texto = document.createTextNode(tarefa.listarTarefas());
   const botao = document.createElement("button");
-    console.log("Tarefas atualizadas:");
-    console.log(dados);
+  
   botao.textContent = "Excluir";
   botao.onclick = () => {
     // lógica para excluir a tarefa
