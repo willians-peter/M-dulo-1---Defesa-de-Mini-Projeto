@@ -1,0 +1,52 @@
+body {
+    font-family: sans-serif;
+    padding: 20px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+input {
+    margin: 5px;
+    padding: 5px;
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9bb;
+}
+
+.card button {
+    margin: 5px;
+    padding: 5px 10px;
+    font-size: 15px;
+}
+
+button {
+    margin-top: 30px;
+    padding: 15px;
+    border-radius: 5px;
+}
+#tarefas ul {
+  background-color: #f7f7f7;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#tarefas ul:hover {
+  background-color: #f2f2f2;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
