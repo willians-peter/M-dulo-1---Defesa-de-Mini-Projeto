@@ -3,17 +3,17 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Gerenciador de tarefas 4 </title>
+        <title>Gerenciador de tarefas ToDoLocal </title>
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <h1>Gerenciador de tarefas:</h1>
-        <h1>Adicionar Tarefa</h1>
+        <h1>Adicionar Tarefa:</h1>
 
         <form id="listaTarefas">
             <input type="text" id="titulo" placeholder="Digite o titulo" required>
             <input type="text" id="tarefa" placeholder="Digite a tarefa" required>
-            <button type="submit">Adicionar Tarefa</button>
+            <button type="submit">Adicionar Tarefa:</button>
             <input type="search"id="localizar" placeholder="Localizar">
         </form>
 
@@ -21,10 +21,65 @@
             
         </ul>
 
-        <script src="main.js"></script>
+        <script src="script.js"></script>
+
+        <h1>Sobre o gerenciador de tarefas:</h1>
+            <h2>Arquivo script.js: a mágica </h2>
+                <h3>
+                    Classe Tarefa é definida pelo classe Tarefa construido com  (id, titulo e tarefa) recebendo o .this para instanciar a classe.
+                    O método para listar as tarefas "listarTarefas" retorna uma string formatada com o título e a tarefa não sendo exibido o id da tarefa, 
+                    este valor é salvo apenas no armazenamento local</h3>
+            <h2>Inicialização dos dados:</h2>
+                <h3>
+                    let dados inicializa o array de dados, let dados = JSON.parse(localStorage.getItem("tarefas")) || []; 
+                    busca a chave tarefas e retorna com string em um array e o operador ou || retorna um conjunto vazio []caso de erro ou ausência de dados salvos.
+                    O contador de IDs é iniciado: let idCounter, busca no array se há dados e define o idCounter como o maior id + 1, ou 1 se não houver dados. 
+                    Utilizado o operador ternario ? abreviando um if/else e .map gerando um novo array com apenas as id.
+                    Math.max(...): O método Math.max recebe uma lista de números e retorna o maior valor. 
+                    O spread operator (...) é usado para passar todos os IDs retornados pelo map como argumentos individuais para o Math.max.
+                    O maior id encontrado por fim recebe +1.</h3>
+            <h2>Função para criar os cards de tarefa:</h2>
+                <h3>
+                    Inciamos a estrutura ao documento HTML, que será acionado quando o conteúdo do documento for completamente carregado, 
+                    o evento de "DOMContentLoaded" para executar o JavaScript apenas apos o carrergamento completo. 
+                    Buscando o ID "listaTarefas" sendo armazenado na variavel form e "tarefas" na variavel container
+                    Sendo as variaveis utilizadas posteriormenta para manipular  a  formulario container de tarefas.
+                    Após isso definimos const criarCarde que recebe (tarefa), ja herdando os .this e uso de arrow function 
+                    criamos o elemento li para tarefa e const texto para tarefa.listarTarefas e e o botão de excluir. </h3>
+
+            <h2>Eventos</h2>
+                <h3>
+                    botao.onclick: Adiciona o evento de clique ao botão de excluir, 
+                    que remove a tarefa do array de dados, atualiza o armazenamento local e remove o card da tarefa.
+                    Sendo utilizado o .filter gerando um novo array que compara o t.id !== (diferente estrito) tarefa.id se forem iguais,
+                    o resultado é falso e esta tarefa não é incluída no novo array. Sendo atulizado o aramazenamento local com localStorage.setItem("tarefas", JSON.stringify(dados)).
+                    Após card.remove remove o item do DOM, inclui nesta parte alguns console log para ajustar o funcionamento, 
+                    na sequencia o card. recebe por appendChild o texto um pular linha e o botão, sendo inserido tudo no container.
+                </h3>
+            <h2>Evento de busca</h2>
+                <h3>
+                    Selecionado o getElementById("localizar") para o campo de busca, escutar o input, definindo const textoBusca e 
+                    convertendo para letras minúsculas (toLowerCase) desse modo vai encontar sempre independente de estar em maiusculas no texto original.
+                    E com funcionamento semelhante ao filter deletar porem com return em com os caracteres que coniciderem no item do titulo e na parte de texto das tarefas.
+                    E com .forEach retorna um callback com apenas as tarefas que corresponde ao carecter do filtro ficando apenas elas na li momentane ou nenhuma 
+                    caso nenhum caracterer corresponda ao .filter. (previemente o  container.innerHTML = ""; limpou as tarefas)
+                </h3>
+            <h2>Inicialização dos dados e adição de eventos:</h2>
+                <h3>
+
+
+
+                    Adiciona os eventos ao formulário, selecionando o formulário e o container de tarefas, 
+                    adicionando os cards de tarefas à lista com dados.forEach, criando uma nova instância de Tarefa e chamando criarCard.
+                    Se o id da nova tarefa for maior ou igual ao idCounter, atualiza o idCounter para id + 1.
+                    Adiciona o evento de submit ao formulário, prevenindo o comportamento padrão do formulário, obtendo os valores dos campos,
+                    criando uma nova tarefa e adicionando-a ao array de dados. Atualiza o armazenamento local com localStorage.setItem("tarefas", JSON.stringify(dados)).
+                    Por fim, adiciona o card da tarefa à lista chamando criarCard.</h3>
+                </h3>
+            
     </body>
     <footer></footer>
-<a href="https://github.com/willians-peter" title="Perfil do GitHub de Willians Peter" target="_blank" style="cursor: pointer; text-decoration: underline;">Visite meu GitHub:</a>
+<a href="https://github.com/willians-peter" title="Perfil do GitHub de Willians Peter" target="_blank" style="cursor: pointer; text-decoration: underline;">Visite meu perfil no GitHub:</a>
      <p>&copy; 2025 Peter Willian's Cipriano</p>
      </footer>
 </html>
