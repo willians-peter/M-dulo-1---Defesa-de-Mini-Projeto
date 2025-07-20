@@ -1,3 +1,45 @@
+function atualizarDataHora() {
+  const agora = new Date();
+  const opcoesHora = { hour: '2-digit', minute: '2-digit', hour12: false };
+  const diaDaSemana = agora.toLocaleDateString('pt-BR', { weekday: 'long' });
+  const horaFormatada = agora.toLocaleTimeString('pt-BR', opcoesHora);
+  const diaDaSemanaMaiuscula = `${diaDaSemana.charAt(0).toUpperCase() + diaDaSemana.slice(1)}`;
+  document.getElementById("data-hora").innerText = `${diaDaSemanaMaiuscula} ${horaFormatada}`;
+}
+
+setInterval(atualizarDataHora, 1000); // atualiza a cada segundo
+atualizarDataHora(); // chama a função uma vez para inicializar a data e hora
+
+// Chama a função imediatamente para exibir a data e hora iniciais
+atualizarDataHora();
+
+// Atualiza a data e hora a cada segundo (1000 milissegundos)
+setInterval(atualizarDataHora, 1000);
+// --- Funções para calcular os valores de Delta com base na Vazão Atual ---
+
+const mensagemElement = document.getElementById("saudacao");
+const dataHoraElement = document.getElementById("data-hora");
+
+function mostrarMensagem() {
+  const dataAtual = new Date();
+  const hora = dataAtual.getHours();
+
+  let mensagem = "";
+  if (hora < 12) {
+    mensagem = "Bom dia!";
+  } else if (hora < 18) {
+    mensagem = "Boa tarde!";
+  } else {
+    mensagem = "Boa noite!";
+  }
+
+  mensagemElement.innerText = mensagem;
+  dataHoraElement.innerText = `Data: ${dataAtual.toLocaleDateString()} Hora: ${dataAtual.toLocaleTimeString()}`;
+}
+
+mostrarMensagem();
+setInterval(mostrarMensagem, 1000 * 60); // atualiza a cada minuto
+
 class Tarefa {
   constructor(id, titulo, tarefa) {
     this.id=id;
