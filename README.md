@@ -1,4 +1,4 @@
-Defesa de Mini Projeto
+README
 
 Foram salvos em 5 pastas os projetos, do Exércicio 1 ao 4 conforme o solicitado descrito nos enunciados e na última pasta ToDo Local a versão final que combina todos os exercícios, descrita a seguir: 
 
@@ -30,6 +30,8 @@ Inicialização dos Dados e Adição de Eventos
 
 Os eventos são adicionados ao formulário, selecionando o formulário e o container de tarefas. Os cards de tarefas são adicionados à lista com dados.forEach, criando uma nova instância de Tarefa e chamando criarCard. O evento submit é adicionado ao formulário para criar uma nova tarefa e adicioná-la ao array de dados.
 
+_____________________________________________________________________________________________________________________________________________________________________________________________
+
 # Módulo-1---Defesa-de-Mini-Projeto
 Módulo 1 - Defesa de Mini-Projeto (exercícios 1 a 4)
 Olá!
@@ -42,6 +44,8 @@ Pelo menos 1 commits por exercício. Exemplo:feat: adicionar tarefa, feat: salva
 Push para o GitHub
 Opcional: Criar README.md explicando como funciona o projeto
 
+_____________________________________________________________________________________________________________________________________________________________________________________________
+
 [M01S07]✅Exercício 1: Interface de Cadastro de Tarefas
 Descrição
 Editar
@@ -52,6 +56,8 @@ Ao clicar no botão, a tarefa digitada deve ser exibida na tela (ex: dentro de u
 Limpe o campo após a adição.
 Use funções com arrow function para manipular o clique.
 
+_____________________________________________________________________________________________________________________________________________________________________________________________
+
 [M01S07]♻️ Exercício 2: Salvando Tarefas no localStorage
 Descrição
 Editar
@@ -60,6 +66,8 @@ Instruções:
 Modifique o código anterior para que, ao adicionar uma tarefa, ela também seja salva no localStorage.
 Ao recarregar a página, as tarefas salvas devem aparecer automaticamente.
 Use métodos como JSON.stringify() e JSON.parse().
+
+_____________________________________________________________________________________________________________________________________________________________________________________________
 
 [M01S07]🧽Exercício 3: Remover Tarefa Individual
 Descrição
@@ -70,6 +78,8 @@ Adicione um botão “Remover” ao lado de cada tarefa exibida.
 Ao clicar, a tarefa deve ser removida da tela e do localStorage.
 Use filter() para remover a tarefa correta do array salvo.
 
+_____________________________________________________________________________________________________________________________________________________________________________________________
+
 [M01S07]🧰 Exercício 4: Filtrar Tarefas com Repetição
 Descrição
 Editar
@@ -77,3 +87,27 @@ Objetivo: Praticar estruturas de repetição e lógica condicional.
 Instruções:
 Implemente um campo de busca que permita filtrar as tarefas conforme o usuário digita.
 Ao digitar no campo, use um for ou filter() para exibir apenas as tarefas que contêm o texto buscado.
+
+_____________________________________________________________________________________________________________________________________________________________________________________________
+
+Mini-Projeto Avaliativo
+Descrição
+Editar
+Instrução geral:
+
+Crie uma aplicação simples em HTML, CSS e JavaScript chamada "ToDo Local", que permita ao usuário adicionar, visualizar e excluir tarefas. Os dados devem ser armazenados usando localStorage. Siga os exercícios abaixo para construir o projeto.
+
+Pontos importantes:
+
+Organizar o projeto com arquivos separados: index.html, style.css, script.js
+
+Versionar o projeto usando GitHub Desktop
+
+Criar repositório
+
+Pelo menos 1 commits por exercício. Exemplo:feat: adicionar tarefa, feat: salvar no localStorage, etc.
+
+Push para o GitHub
+
+Opcional: Criar README.md explicando como funciona o projeto
+_____________________________________________________________________________________________________________________________________________________________________________________________
